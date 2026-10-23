@@ -39,7 +39,12 @@ export default function ProductsPage(){
     />
   </>
 ) : (
-  <PartArt index={i} />
+  <div className="real-product-glow" aria-hidden="true" />
+<img
+  className="real-product-image"
+  src="/amar-industries-online-store/brass-eyelet.jpeg"
+  alt="Brass eyelet by Amar Industries"
+/>
 )}{p.id === 'eyelet-600' ? (   <span className="product-visual-caption">AMAR INDUSTRIES · EYELETS</span> ) : (   <span className="product-visual-caption">ILLUSTRATIVE COMPONENT ART</span> )}</div><div className="product-card-body"><div className="product-category-label">{p.category}</div><h3>{p.name}</h3><p className="product-spec-line">{p.sizes}</p><dl><div><dt>Material</dt><dd>{p.materials}</dd></div><div><dt>Finish</dt><dd>{p.finishes}</dd></div><div><dt>Minimum order</dt><dd>{p.moq.toLocaleString('en-IN')} pcs <span className="spec-note">(confirm per item)</span></dd></div></dl><div className="product-pricing"><div><span>Retail / sample pricing</span><b>{p.retail}</b></div><div><span>Wholesale</span><b>{p.bulk}</b></div></div><div className="quantity-row"><label>Enquiry qty <div className="qty-control"><button onClick={()=>setQuantities(q=>({...q,[p.id]:Math.max(p.moq,(q[p.id]||p.moq)-p.moq)}))} aria-label="Decrease quantity"><Minus size={13}/></button><input value={quantities[p.id]||p.moq} onChange={e=>setQuantities(q=>({...q,[p.id]:Math.max(1,Number(e.target.value)||1)}))} aria-label={`Quantity for ${p.name}`} inputMode="numeric"/><button onClick={()=>setQuantities(q=>({...q,[p.id]:(q[p.id]||p.moq)+p.moq}))} aria-label="Increase quantity"><Plus size={13}/></button></div></label><span className="quantity-unit">PCS</span></div><a className="product-enquire" href={whatsapp(p)} target="_blank" rel="noreferrer">Enquire for pricing <ArrowUpRight size={15}/></a></div></article>)}</div>
     {filtered.length===0&&<div className="no-results"><Search size={25}/><h3>No matching products</h3><p>Try another search or select a different category.</p><button onClick={()=>{setQuery('');setCategory('All products')}}>Clear filters</button></div>}
    </div>
