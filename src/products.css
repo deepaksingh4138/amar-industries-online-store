@@ -25,7 +25,29 @@
   mix-blend-mode: multiply;
   padding: 12px;
 }
+.real-product-glow {
+  position: absolute;
+  inset: 15%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(198, 157, 75, 0.14),
+    transparent 70%
+  );
+  pointer-events: none;
+}
 
+.product-card-visual .real-product-image {
+  position: absolute;
+  z-index: 1;
+  left: 10%;
+  top: 5%;
+  width: 80%;
+  height: 88%;
+  object-fit: contain;
+  padding: 10px;
+  mix-blend-mode: normal;
+}
 /* Keep the product caption visible above the image */
 .product-card-visual .product-visual-caption {
   z-index: 2;
