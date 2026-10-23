@@ -48,6 +48,54 @@
   padding: 10px;
   mix-blend-mode: normal;
 }
+
+/* Product image styling — Amar Industries */
+.product-card-visual {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.product-card-visual .product-part-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.product-card-visual .real-product-glow {
+  position: absolute;
+  z-index: 0;
+  inset: 15%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(198, 157, 75, 0.18),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.product-card-visual .real-product-image {
+  position: absolute;
+  z-index: 1;
+  left: 10%;
+  top: 5%;
+  width: 80%;
+  height: 88%;
+  object-fit: contain;
+  padding: 10px;
+  mix-blend-mode: normal;
+}
+
+.product-card-visual .product-visual-caption {
+  position: absolute;
+  z-index: 2;
+  left: 12px;
+  bottom: 9px;
+}
+
 /* Keep the product caption visible above the image */
 .product-card-visual .product-visual-caption {
   z-index: 2;
